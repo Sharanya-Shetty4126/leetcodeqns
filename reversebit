@@ -1,0 +1,34 @@
+//leetcode
+//REVERSE BITS
+
+class Solution {
+    public int reverseBits(int n) {
+
+int []bit=new int [32];
+int k=n;
+int j=0;
+while(k>0&&j<32){
+
+if((k&1)==1)bit[j]=1;
+else bit[j]=0;
+j++;
+k=k>>1;
+
+}
+
+
+j=31;
+int i=0;
+int sum=0;
+while(j>=0&&i<32){
+int rem=((int)Math.pow(2,j))*bit[i];
+sum=sum+rem;
+j--;
+i++;
+}
+
+
+return sum;
+    
+    }
+}
