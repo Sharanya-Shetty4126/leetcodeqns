@@ -1,0 +1,44 @@
+//leetcode
+//number of zero filled sub array
+//medium level question
+
+class Solution {
+    public long zeroFilledSubarray(int[] nums) {
+        
+//take the input of length
+int n=nums.length;
+int i=0;//will check from the initial element of the array
+long count =0;//to check the number of consecutive zeroes
+long subarray=0;//to count the total number of sub arrays;
+
+while(i!=n-1){
+int j=i+1;
+if(nums[i]!=0){
+    
+    i++;
+    continue;
+}
+count++;
+if(nums[j]!=0){
+ 
+   
+    subarray+=count*(count+1)/2;
+    count=0;
+i++;
+    continue;
+}
+//count++;
+i++;
+
+}
+
+if(i==n-1&&nums[i]==0){
+    count++;
+    subarray+=(count)*(count+1)/2;
+}
+
+
+return subarray;
+        
+    }
+}
