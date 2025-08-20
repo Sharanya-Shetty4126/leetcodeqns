@@ -1,0 +1,24 @@
+//leetocde
+
+
+class Solution {
+    public boolean hasAlternatingBits(int n) {
+        
+int result=n^(n>>1);
+if((result&1)==0)return false;
+result=result>>1;
+while(result>0){
+if((result&1)==0)return false;
+result=result>>1;
+
+
+}
+
+
+
+return true;
+
+
+
+    }
+}
