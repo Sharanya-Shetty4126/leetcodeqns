@@ -1,3 +1,41 @@
 //leetcode
 //bitwise manipulation
 //code below
+class Solution {
+
+public boolean ispoweroftwo(int n){
+    return n>0&&((n&(n-1))==0);
+}
+
+
+
+    public int rangeBitwiseAnd(int left, int right) {
+        if(left-right==0)return left;
+        if(ispoweroftwo(right))return 0;
+
+/*for(int i=left+1;i<right;i++){
+    if(ispoweroftwo(i)){
+        System.out.println("\n\t\t\tIt entered here");
+        return 0;
+    }
+}*/
+int j=left+1;
+    int i=0;
+
+int result=left;
+while(right>left){
+    if(ispoweroftwo(right))return 0;
+right=(right-1)&right;
+result=right;
+if(result==0)return 0;
+
+}
+
+
+return result;
+
+
+
+
+
+}}
